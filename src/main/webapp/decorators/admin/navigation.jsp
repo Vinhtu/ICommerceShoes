@@ -25,36 +25,22 @@
                         </li>
                         <li>
                             <a href="<c:url value="/admin/product" /> ">
-                                <i class="fas fa-chart-bar"></i>Product</a>
+                               <i class="fas fa-tachometer-alt"></i>Product</a>
                         </li>
                         <li>
                             <a href="<c:url value="/admin/order" />">
-                                <i class="fas fa-table"></i>Order</a>
+                                <i class="fas fa-tachometer-alt"></i> Order</a>
                         </li>
+                        
                         <li>
-                            <a href="<c:url value="/admin/account"/> ">
-                                <i class="far fa-check-square"></i>Account</a>
-                        </li>
-                        <li>
-                            <a href="<c:url value="/admin/customer"/> ">
-                                <i class="fas fa-calendar-alt"></i>Customer</a>
+                            <a href="<c:url value="/admin/user"/> ">
+                                <i class="fas fa-tachometer-alt"></i>user</a>
                         </li>
                         <li>
                             <a href="<c:url value="/admin/promotion"/>">
-                                <i class="fas fa-map-marker-alt"></i>Promotion</a>
+                                <i class="fas fa-tachometer-alt"></i>Promotion</a>
                         </li>
-                          <li>
-                            <a href="<c:url value="/ad/login"/>">
-                                <i class="fas fa-map-marker-alt"></i>Login</a>
-                        </li>
-                              <li>
-                            <a href="<c:url value="/ad/register"/>">
-                                <i class="fas fa-map-marker-alt"></i>Register</a>
-                        </li>
-                         <li>
-                            <a href="<c:url value="/ad/forget-password"/>">
-                                <i class="fas fa-map-marker-alt"></i>Forget Password</a>
-                        </li>
+                       
                         
                         
                     </ul>

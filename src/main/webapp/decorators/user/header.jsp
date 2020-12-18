@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+
+
 <div class="header-top">
 	   <div class="wrap"> 
 			  <div class="header-top-left">
@@ -32,11 +27,11 @@
 					<li class="active"><a href="<c:url value="/user?id=1" />">Account</a></li> |
 					<li><a href="checkout.html">Wishlist</a></li> |
 					<li><a href="checkout.html">Checkout</a></li> |
-					<c:if test="${not empty ACCOUNTMODEL}">
-							<li><a href="#">Wellcome, ${ACCOUNTMODEL.username}</a></li> |
+					<c:if test="${not empty USERMODEL}">
+							<li><a href="#">Wellcome, ${USERMODEL.username}</a></li> |
 							<li><a href="<c:url value="/logout?action=logout" />">Logout</a></li>
 					 </c:if>
-					<c:if test="${empty ACCOUNTMODEL}"> 	
+					<c:if test="${empty USERMODEL}"> 	
 						<li><a href="<c:url value="/login?action=login" />">Log In</a></li> |
 						<li><a href="<c:url value="/register?action=register" />">Sign Up</a></li>
 					</c:if>
@@ -132,5 +127,7 @@
         <div class="slidePrev"><span></span></div>
         <div class="slideNext"><span></span></div>
     </div>
-</body>
-</html>
+    
+
+    
+  

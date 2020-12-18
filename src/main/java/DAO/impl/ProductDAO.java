@@ -35,15 +35,17 @@ public class ProductDAO extends AbstractDAO<ProductModel>  implements IProductDA
 
 	@Override
 	public void update(ProductModel updateProductModel) {
-		StringBuilder sql = new StringBuilder("UPDATE product SET name = ? , img = ?, alt_img = ? , price = ? ");
-		sql.append("description = ?, promotion_id = ? ,  category_id = ?, createByDate = ?, num_product = ? "); 
-		 insert(sql.toString(),  updateProductModel.getName(), updateProductModel.getImg(), updateProductModel.getAlt_img(), updateProductModel.getPrice(), updateProductModel.getDescription(), updateProductModel.getPromotion_id(), updateProductModel.getCategory_id(), updateProductModel.getCreateByDate(), updateProductModel.getNum_product() );
+		String sql = "UPDATE product SET name = ? , img = ?, alt_img = ? , price = ? ,description = ?, promotion_id = ?,category_id = ?, createByDate = ? , num_product = ?  WHERE id =?"; 
+		  insert(sql,  updateProductModel.getName(), updateProductModel.getImg(), updateProductModel.getAlt_img(), updateProductModel.getPrice(), 
+				  updateProductModel.getDescription(),updateProductModel.getPromotion_id(),updateProductModel.getCategory_id(),
+				  updateProductModel.getCreateByDate() ,updateProductModel.getNum_product(),  updateProductModel.getId());
 	}
 
 
 	@Override
 	public void delete(int id) {
-		String sql = "DELETE FROM product WHERE id_product = ?";
+		
+		String sql = "DELETE FROM product WHERE id = ?";
 		update(sql, id);
 		
 	}

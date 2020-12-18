@@ -30,7 +30,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		}catch(ClassNotFoundException | SQLException e) {
 			return null;
 		}
-	}
+	} 
 	
 	@Override
 	public <T> List<T> query(String sql, IRowMapper<T> rowMapper, Object... parameters) {

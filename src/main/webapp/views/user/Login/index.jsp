@@ -32,11 +32,11 @@
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      <label for="modlgn_username">Email</label>
-						      <input id="modlgn_username" type="text" value="" name="username" class="inputbox" size="18" autocomplete="off">
+						      <input id="modlgn_username" type="text" value="admin" name="username" class="inputbox" size="18" autocomplete="off">
 						    </p>
 						    <p id="login-form-password">
 						      <label for="modlgn_passwd">Password</label>
-						      <input id="modlgn_passwd" type="password" value="" name="password" class="inputbox" size="18" autocomplete="off">
+						      <input id="modlgn_passwd" type="password" value="123456" name="password" class="inputbox" size="18" autocomplete="off">
 						    </p>
 					
 					      <c:if test="${not empty message}" >

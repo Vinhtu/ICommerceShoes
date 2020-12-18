@@ -21,7 +21,7 @@ public class ProductService implements IProductService {
 	
 	@Override
 	public List<ProductModel> findProductId() {
-		// TODO Auto-generated method stub	
+	
 		return productDao.findProductId();
 	}
 

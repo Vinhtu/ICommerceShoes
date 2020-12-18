@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Constant.SystemConstant;
 import Model.AccountModel;
+import Model.UserModel;
 import utils.SessionUtil;
 
 public class AuthorizationFilter implements Filter {
@@ -34,12 +35,12 @@ public class AuthorizationFilter implements Filter {
 		String url = request.getRequestURI();
 		
 		if(url.startsWith("/Icommerceshoes/admin")) {
-			AccountModel accountModel = (AccountModel) SessionUtil.getInstance().getValue(request, "ACCOUNTMODEL");
-			if(accountModel != null){
-				if(accountModel.getUsername().equals(SystemConstant.ADMIN)) {
+			UserModel userModel = (UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL");
+			if(userModel != null){
+				if(userModel.getUsername().equals(SystemConstant.ADMIN)) {
 					chain.doFilter(servletRequest, servletResponse);
 				}
-				else if(accountModel.getUsername().equals(SystemConstant.USER)) {
+				else if(userModel.getUsername().equals(SystemConstant.USER)) {
 					response.sendRedirect(request.getContextPath()+"/login?action=login&message=not_permission&result=error");
 				}
 			}else {

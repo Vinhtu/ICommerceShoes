@@ -4,6 +4,7 @@ import java.util.List;
 
 import DAO.IAccountDAO;
 import Mapper.AccountMapper;
+import Mapper.CategoryMapper;
 import Model.AccountModel;
 
 public class AccountDAO extends AbstractDAO<AccountModel> implements IAccountDAO {
@@ -23,6 +24,26 @@ public class AccountDAO extends AbstractDAO<AccountModel> implements IAccountDAO
 	public Long addAccount(AccountModel accountModel) {
 		String sql = "Insert into account(username,password,role) values(?,?,?)";
 		return insert(sql,accountModel.getUsername(), accountModel.getPassword(), accountModel.getRole());
+	}
+
+	@Override
+	public List<AccountModel> getAccountAll() {
+		String sql = "Select * from account";
+		return query(sql, new AccountMapper());
+	}
+
+	@Override
+	public void update(AccountModel accountModel) {
+		String sql = "UPDATE account SET username = ?, password = ?, role =? , status = ? ";
+		 insert(sql.toString(), accountModel.getUsername() , accountModel.getPassword(), accountModel.getRole(), accountModel.getStatus());
+		
+	}
+
+	@Override
+	public void delete(int id) {
+	   String sql ="Delete from product where id= ?";
+	   update(sql, id);
+		
 	}
 	
 	

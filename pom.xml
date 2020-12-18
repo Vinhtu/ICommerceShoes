@@ -18,13 +18,13 @@
 			    <scope>provided</scope>
 			</dependency>
 		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
-      <dependency>
-		    <groupId>jstl</groupId>
-		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
-		</dependency> 
-
-
+ <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+ 
 		<!-- https://mvnrepository.com/artifact/opensymphony/sitemesh -->
 		<dependency>
 		    <groupId>opensymphony</groupId>
@@ -36,9 +36,7 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>5.1.39</version>
 		</dependency>
-		
-		<!-- json -->
-		
+				<!-- json -->
 		<dependency>
 		     <groupId>com.fasterxml.jackson.core</groupId>
 		     <artifactId>jackson-core</artifactId>
@@ -65,7 +63,6 @@
 		     <version>1.9.13</version>
 		</dependency>
 		<!-- end json -->
-		
 		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
 		<dependency>
 		    <groupId>commons-beanutils</groupId>

@@ -1,42 +1,62 @@
 package Model;
 
-public class UserModel {
-
-	private int id;
-	private String first_name;
-	private String last_name;
-	private String birth_date;
-	private String address;
-	private String city;
-	private String country;
-	private String country_code;
-	private String phone;
-	private String createByDate;
+public class UserModel extends AbstractModel<UserModel>{
 	
-
+	private int id;
+    private String avatar;
+    private String username;
+    private String password;
+    private String role;
+    private String firstname;
+    private String lastname;
+    private String birthdate;
+    private String address;
+	private String city;
+    private String country;
+    private String phone;
+    private String createbydate;
+    private String status;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirst_name() {
-		return first_name;
+	public String getAvatar() {
+		return avatar;
 	}
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
-	public String getLast_name() {
-		return last_name;
+	public String getUsername() {
+		return username;
 	}
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getBirth_date() {
-		return birth_date;
+	public String getPassword() {
+		return password;
 	}
-	public void setBirth_date(String birth_date) {
-		this.birth_date = birth_date;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
 	}
 	public String getAddress() {
 		return address;
@@ -56,23 +76,30 @@ public class UserModel {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getCountry_code() {
-		return country_code;
-	}
-	public void setCountry_code(String country_code) {
-		this.country_code = country_code;
-	}
 	public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getCreateByDate() {
-		return createByDate;
+	public String getCreatebydate() {
+		return createbydate;
 	}
-	public void setCreateByDate(String createByDate) {
-		this.createByDate = createByDate;
+	public void setCreatebydate(String createbydate) {
+		this.createbydate = createbydate;
 	}
-	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 }

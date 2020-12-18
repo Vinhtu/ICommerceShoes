@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/decorators/adminAuth.jsp=UTF-8
+encoding//src/main/webapp/decorators/auth/footer.jsp=UTF-8
 encoding//src/main/webapp/decorators/user/header.jsp=UTF-8
+encoding//src/main/webapp/views/admin/Product/index.jsp=UTF-8

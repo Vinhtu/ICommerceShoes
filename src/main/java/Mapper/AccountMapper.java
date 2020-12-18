@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Model.AccountModel;
-import Model.RoleModel;
+import Model.UserModel;
 
 public class AccountMapper implements IRowMapper<AccountModel> {
 
@@ -16,7 +16,7 @@ public class AccountMapper implements IRowMapper<AccountModel> {
 			accountModel.setUsername(resultSet.getString("username"));
 			accountModel.setPassword(resultSet.getString("password"));
 //			accountModel.setStatus(resultSet.getString("status"));
-			accountModel.setRole(resultSet.getString("role"));
+//			accountModel.setRole(resultSet.getString("role"));
 //			try {
 //				RoleModel role = new RoleModel();
 //				role.setCode(resultSet.getString("code"));

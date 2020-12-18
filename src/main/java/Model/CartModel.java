@@ -4,46 +4,33 @@ public class CartModel {
 	
 	
 	private int id;
-	private int product_id;
-	private int customer_id;
-	private String total_price;
-	private String create_date;
-	private String finish_date;
+	private AccountModel account;
+	private int u_id;
+	private String buyDate;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getProduct_id() {
-		return product_id;
+	public AccountModel getUser() {
+		return account;
 	}
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
+	public void setAccount(AccountModel account) {
+		this.account = account;
 	}
-	public int getCustomer_id() {
-		return customer_id;
+
+ 	public int getU_id() {
+		return u_id;
 	}
-	public void setCustomer_id(int customer_id) {
-		this.customer_id = customer_id;
+	public void setU_id(int u_id) {
+		this.u_id = u_id;
 	}
-	public String getTotal_price() {
-		return total_price;
+	public String getBuyDate() {
+		return buyDate;
 	}
-	public void setTotal_price(String total_price) {
-		this.total_price = total_price;
-	}
-	public String getCreate_date() {
-		return create_date;
-	}
-	public void setCreate_date(String create_date) {
-		this.create_date = create_date;
-	}
-	public String getFinish_date() {
-		return finish_date;
-	}
-	public void setFinish_date(String finish_date) {
-		this.finish_date = finish_date;
+	public void setBuyDate(String buyDate) {
+		this.buyDate = buyDate;
 	}
 
 }

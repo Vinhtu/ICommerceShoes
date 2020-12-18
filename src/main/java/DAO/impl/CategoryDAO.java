@@ -1,19 +1,10 @@
 package DAO.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import DAO.ICategoryDAO;
 import Mapper.CategoryMapper;
-import Mapper.IRowMapper;
 import Model.CategoryModel;
-import Model.ProductModel;
 
 public class CategoryDAO  extends AbstractDAO<CategoryModel>  implements ICategoryDAO {
 	
@@ -23,11 +14,11 @@ public class CategoryDAO  extends AbstractDAO<CategoryModel>  implements ICatego
 		return query(sql, new CategoryMapper());
 	}
 
-		@Override
-		public Long save(CategoryModel categoryModel) {
-			String sql  = "INSERT INTO category(id, code, name) VALUES (?,?,?) ";
-			return insert(sql, categoryModel.getId(), categoryModel.getCode(), categoryModel.getName());
-		}
+	@Override
+	public Long save(CategoryModel categoryModel) {
+		String sql  = "INSERT INTO category(id, code, name) VALUES (?,?,?) ";
+		return insert(sql, categoryModel.getId(), categoryModel.getCode(), categoryModel.getName());
+	}
 //	@Override
 //	public Long save(CategoryModel categoryModel) {
 //		ResultSet resultSet = null;

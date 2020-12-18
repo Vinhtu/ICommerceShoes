@@ -12,7 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import Model.ProductModel;
 import Service.IProductService;
+import Service.IPromotionService;
 import Service.impl.ProductService;
+import Service.impl.PromotionService;
 import utils.HttpUtil;
 
 
@@ -20,8 +22,10 @@ import utils.HttpUtil;
 public class ProductAPI extends HttpServlet {
 	
 	private IProductService productService;
+	private IPromotionService promotionService;
 	public ProductAPI() {
 		productService = new ProductService();
+		promotionService = new PromotionService();
 	}
 	
 	private static final long serialVersionUID = -915988021506484384L;

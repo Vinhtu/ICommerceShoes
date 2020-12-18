@@ -3,20 +3,13 @@
       <excludes>
          <pattern>/api*</pattern>
       </excludes>
-      <decorator name="user" page="user.jsp">
+      <decorator name="test" page="user.jsp">
           <pattern>/*</pattern>
       </decorator>
   <decorator name="admin" page="admin.jsp">
           <pattern>/admin*</pattern>
       </decorator>
-      <decorator name="ad" page="adminAuth.jsp">
+      <decorator name="user" page="adminAuth.jsp">
           <pattern>/ad*</pattern>
       </decorator>
-        <decorator name="ad" page="adminAuth.jsp">
-          <pattern>/ad*</pattern>
-      </decorator>
-        <decorator name="ad" page="adminAuth.jsp">
-          <pattern>/ad*</pattern>
-      </decorator>
-      
 </decorators>

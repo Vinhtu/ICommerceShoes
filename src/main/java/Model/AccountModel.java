@@ -7,14 +7,7 @@ public class AccountModel {
 	 private String role;
 	 private String status;
 	 
-	 private Long roleId;
-
-	 public Long getRoleId() {
-		return roleId;
-	}
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
+	
 	public int getId() {
 		return id;
 	}

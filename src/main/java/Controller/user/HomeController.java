@@ -15,17 +15,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Constant.SystemConstant;
+import DAO.ICartDAO;
+import DAO.impl.CartDAO;
 import Model.AccountModel;
+import Model.CartModel;
 import Model.CategoryModel;
 import Model.ProductModel;
+import Model.UserModel;
 import Service.IAccountService;
 import Service.ICartService;
 import Service.ICategoryService;
 import Service.IProductService;
+import Service.IUserService;
 import Service.impl.AccountService;
 import Service.impl.CartService;
 import Service.impl.CategoryService;
 import Service.impl.ProductService;
+import Service.impl.UserService;
 import utils.FormUtil;
 import utils.SessionUtil;
 
@@ -38,15 +44,14 @@ public class HomeController extends HttpServlet {
 	
 	private ICategoryService category;
 	private IProductService product;
-	private ICartService cart;
-	private IAccountService accountService;
+	private IUserService roleService;
 
 	
     public HomeController() {
     	category = new CategoryService();
     	product = new ProductService();
-    	cart = new CartService();
-    	accountService = new AccountService();
+    	roleService = new UserService();
+
 
     }
 
@@ -58,7 +63,8 @@ public class HomeController extends HttpServlet {
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-
+	
+		
 		String action = request.getParameter("action");
 		if(action != null && action.equals("login")) {
 			String message = request.getParameter("message");
@@ -67,12 +73,12 @@ public class HomeController extends HttpServlet {
 				request.setAttribute("message", resourceBundle.getString(message));
 				request.setAttribute("result", result);
 			}
-            AccountModel model = FormUtil.toModel(AccountModel.class, request);
+            UserModel model = FormUtil.toModel(UserModel.class, request);
 			RequestDispatcher rd = request.getRequestDispatcher("/views/user/Login/index.jsp");
 			rd.forward(request, response);
-		}
+		}  
 		else if(action != null && action.equals("logout")) {
-			SessionUtil.getInstance().removeValue(request,"ACCOUNTMODEL");
+			SessionUtil.getInstance().removeValue(request,"USERMODEL");
 			response.sendRedirect(request.getContextPath()+ "/");
 			
 		}else {
@@ -86,21 +92,26 @@ public class HomeController extends HttpServlet {
 	    	request.setAttribute("products", product.getProductAll() );
 	    	request.setAttribute("topProducts", product.getTopProducts() );
 	    	request.setAttribute("newProducts", product.getNewProducts() );
-	   
+	    	request.setAttribute("products",  product.getProductAll() );
+
+			
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/views/user/Home/index.jsp");
 			rd.forward(request, response);
 		}
-	
 	}
+	
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
 		String action = request.getParameter("action");
 		if(action != null && action.equals("login")) {
-			AccountModel model = FormUtil.toModel(AccountModel.class, request);
-			model = accountService.findByAccountStatus(model.getUsername(),model.getPassword());
+			UserModel model = FormUtil.toModel(UserModel.class, request);
+			model = roleService.findByAccountStatus(model.getUsername(),model.getPassword());
 		    if(model != null) {
-		    	SessionUtil.getInstance().putValue(request, "ACCOUNTMODEL", model);
+		    	SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 		    	if(model.getRole().equals("user")) {
 		    		response.sendRedirect(request.getContextPath() + "/");
 		    	}

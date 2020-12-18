@@ -8,9 +8,9 @@ public class ProductModel {
 	   private String alt_img;
 	   private String description;
 	   private String createByDate;
-	   private int num_product;
-	   private int promotion_id;
-	   private int category_id;
+	   private String num_product;
+	   private String promotion_id;
+	   private String category_id;
 	   private String type;
 	   private long[] arrId;
 	
@@ -44,22 +44,22 @@ public class ProductModel {
 	public void setCreateByDate(String createByDate) {
 		this.createByDate = createByDate;
 	}
-	public int getNum_product() {
+	public String getNum_product() {
 		return num_product;
 	}
-	public void setNum_product(int num_product) {
+	public void setNum_product(String num_product) {
 		this.num_product = num_product;
 	}
-	public int getPromotion_id() {
+	public String getPromotion_id() {
 		return promotion_id;
 	}
-	public void setPromotion_id(int promotion_id) {
+	public void setPromotion_id(String promotion_id) {
 		this.promotion_id = promotion_id;
 	}
-	public int getCategory_id() {
+	public String getCategory_id() {
 		return category_id;
 	}
-	public void setCategory_id(int category_id) {
+	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
 	}
 	public String getName() {

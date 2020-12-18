@@ -42,8 +42,8 @@
 		         	<h3 class="m_3">${productDetail.name}</h3>
 		             <p class="m_5">${productDetail.price} <span class="reducedfrom">Rs. 999</span> <a href="#">click for offer</a></p>
 		         	 <div class="btn_form">
-						<form>
-							<input type="submit" value="buy" title="">
+						<form action="">
+							<a href="<c:url value="/checkout?id=${productDetail.name}" />"/><input type="submit" value="buy" title=""></a>
 						</form>
 					 </div>
 					<span class="m_link"><a href="#">login to save in wishlist</a> </span>

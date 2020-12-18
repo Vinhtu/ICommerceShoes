@@ -1,5 +1,7 @@
 package Service.impl;
 
+import java.util.List;
+
 import DAO.IAccountDAO;
 import DAO.impl.AccountDAO;
 import Model.AccountModel;
@@ -23,6 +25,11 @@ public class AccountService implements IAccountService{
 	public AccountModel addAccount(AccountModel accountModel) {
 	    Long id = accountDao.addAccount(accountModel);
 	     return null;
+	}
+
+	@Override
+	public List<AccountModel> getAccountAll() {
+		return  accountDao.getAccountAll();
 	}
 
 
